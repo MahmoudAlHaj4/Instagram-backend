@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 use App\Models\posts;
 
 class PostsController extends Controller
@@ -12,4 +15,7 @@ class PostsController extends Controller
         $posts = posts::all();
         return response()->json(['posts'=>$posts]);
     }
-}
+
+   
+    }
+
